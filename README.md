@@ -1,5 +1,5 @@
 [![Download](https://api.bintray.com/packages/bincrafters/public-conan/tcl%3Abincrafters/images/download.svg) ](https://bintray.com/bincrafters/public-conan/tcl%3Abincrafters/_latestVersion)
-[![Build Status](https://travis-ci.org/bincrafters/conan-tcl.svg?branch=stable%2F8.6.8)](https://travis-ci.org/bincrafters/conan-tcl)
+[![Build Status](https://travis-ci.com/bincrafters/conan-tcl.svg?branch=stable%2F8.6.8)](https://travis-ci.com/bincrafters/conan-tcl)
 [![Build status](https://ci.appveyor.com/api/projects/status/github/bincrafters/conan-tcl?branch=stable%2F8.6.8&svg=true)](https://ci.appveyor.com/project/bincrafters/conan-tcl)
 
 [Conan.io](https://conan.io) package recipe for [*tcl*](https://tcl.tk).
