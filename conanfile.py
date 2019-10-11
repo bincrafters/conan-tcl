@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from conans import ConanFile, AutoToolsBuildEnvironment, tools
 from conans.errors import ConanExceptionInUserConanfileMethod
 from conans.util.env_reader import get_env
@@ -28,7 +26,7 @@ class TclConan(ConanFile):
         "shared": False,
     }
     _source_subfolder = "sources"
-    requires = ("zlib/1.2.11@conan/stable", )
+    requires = ("zlib/1.2.11", )
 
     @property
     def _is_mingw_windows(self):
@@ -37,6 +35,7 @@ class TclConan(ConanFile):
     def configure(self):
         if self.settings.compiler != "Visual Studio":
             del self.settings.compiler.libcxx
+            del self.settings.compiler.cppstd
 
     def build_requirements(self):
         if self._is_mingw_windows:
