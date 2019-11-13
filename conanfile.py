@@ -13,7 +13,6 @@ class TclConan(ConanFile):
     topics = ("conan", "tcl", "scripting", "programming")
     url = "https://github.com/bincrafters/conan-tcl"
     homepage = "https://tcl.tk"
-    author = "Bincrafters <bincrafters@gmail.com>"
     license = "TCL"
     exports = ["LICENSE.md"]
     settings = "os", "compiler", "build_type", "arch"
@@ -39,7 +38,7 @@ class TclConan(ConanFile):
 
     def build_requirements(self):
         if self._is_mingw_windows:
-            self.build_requires("msys2_installer/latest@bincrafters/stable")
+            self.build_requires("msys2/20161025")
 
     def source(self):
         filename = "tcl{}-src.tar.gz".format(self.version)
