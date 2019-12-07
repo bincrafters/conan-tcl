@@ -38,7 +38,7 @@ class TclConan(ConanFile):
 
     def build_requirements(self):
         if self._is_mingw_windows:
-            self.build_requires("msys2/20161025")
+            self.build_requires("msys2/20190524")
 
     def source(self):
         filename = "tcl{}-src.tar.gz".format(self.version)
