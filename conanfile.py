@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from conans import ConanFile, AutoToolsBuildEnvironment, tools
 from conans.errors import ConanExceptionInUserConanfileMethod
 from conans.util.env_reader import get_env
@@ -15,7 +13,6 @@ class TclConan(ConanFile):
     topics = ("conan", "tcl", "scripting", "programming")
     url = "https://github.com/bincrafters/conan-tcl"
     homepage = "https://tcl.tk"
-    author = "Bincrafters <bincrafters@gmail.com>"
     license = "TCL"
     exports = ["LICENSE.md"]
     settings = "os", "compiler", "build_type", "arch"
@@ -28,7 +25,7 @@ class TclConan(ConanFile):
         "shared": False,
     }
     _source_subfolder = "sources"
-    requires = ("zlib/1.2.11@conan/stable", )
+    requires = ("zlib/1.2.11", )
 
     @property
     def _is_mingw_windows(self):
@@ -37,10 +34,11 @@ class TclConan(ConanFile):
     def configure(self):
         if self.settings.compiler != "Visual Studio":
             del self.settings.compiler.libcxx
+            del self.settings.compiler.cppstd
 
     def build_requirements(self):
         if self._is_mingw_windows:
-            self.build_requires("msys2_installer/latest@bincrafters/stable")
+            self.build_requires("msys2/20190524")
 
     def source(self):
         filename = "tcl{}-src.tar.gz".format(self.version)
